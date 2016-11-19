@@ -1,0 +1,57 @@
+# Lout source file for customized letters 
+#
+# Use the setup file formbrief (first adopt it to your needs)
+# 
+# The layout of this letter is CC-BY licensed, see
+# https://creativecommons.org/licenses/by/3.0/
+#
+# Martin Michel, 2016
+
+# Use the following line if you need external TTF/OTF fonts, see
+# https://github.com/smartmic/addfonts for installation and usage.
+# @Database @FontDef{ myfontdefs }
+@Include { formbrief }
+@Document
+//
+@Text @Begin
+#@NP                               # Break page after Headers
+
+# sender address shown in envelope window
+@LP lines @Break -0.6c @VShift {
+{Helvetica Base 8p} @Font gray @Colour @Underline {Max Mustermann @Bullet Beispielstraße 1 @Bullet 12345 Beispielstadt }
+
+# the addressee
+Firma Gmbh"&"Co. KG
+Hr. Schmidt
+Beispielweg 2
+98765 Beispielstadt
+}
+
+# your place
+@LP rlines @Break -1.5c @VShift {
+Beispielstadt, @Date
+}
+
+# subject heading
+@LP lines @Break -0.2c @VShift @B {
+Kündigung Vetrag Nr. 12345
+Kundennummer 123456789
+}
+
+# main letter body
+@LP lines @Break -0.2c @VShift {
+Sehr geehrte Damen und Herren,
+
+hiermit kündige ich meinen Vertrag zum nächstmöglichen Termin. 
+
+Bitte senden Sie mir in den nächsten Tagen eine Kündigungsbestätigung mit Angabe des Vertragsende-Datums. Vielen Dank im Voraus!
+}
+
+# greetings
+@LP lines @Break -0.6c @VShift {
+Mit freundlichen Grüßen,
+
+Max Mustermann
+}
+
+@End @Text
