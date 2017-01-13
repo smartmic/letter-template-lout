@@ -4,7 +4,7 @@ A clean, beautiful template to typeset formal letters using
 [Lout](https://en.wikipedia.org/wiki/Lout_%28software%29). It
 resembles some examples following the German DIN 5008 standard for
 business letter layouts and should be easy to adopt for your own
-needs. Also an extension to fully DIN 5008 compliance is possible. 
+needs.
 
 ![formbrief template](brief.png)
 
