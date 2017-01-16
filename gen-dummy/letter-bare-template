@@ -1,0 +1,58 @@
+# Letter Template - Lout source file for customized letters 
+#
+# Use the setup file mybrief (first adopt it to your needs)
+# 
+# The layout of this letter is CC-BY licensed, see
+# https://creativecommons.org/licenses/by/3.0/
+#
+# Martin Michel, 2016
+
+# Use the following line if you need external TTF/OTF fonts, see
+# https://github.com/smartmic/addfonts for installation and usage.
+
+# @Database @FontDef{ myfontdefs }
+@Include { mybrief }
+@Document
+//
+@Text @Begin
+#@NP                               # Break page after Headers
+
+# sender address shown in envelope window
+@LP lines @Break -0.6c @VShift {
+{Helvetica Base 8p} @Font gray @Colour @Underline {$sender_name @Bullet $sender_street @Bullet $sender_postal_code $sender_city }
+
+# the addressee
+$company 
+Hr. $addresee_name
+$addresee_street
+$addresee_postal_code $addresee_city
+}
+
+# your place
+@LP rlines @Break -1.5c @VShift {
+$sender_city, @Date
+}
+
+# subject heading
+@LP lines @Break -0.2c @VShift @B {
+$subject
+Kundennummer $number 
+}
+
+# main letter body
+@LP lines @Break -0.2c @VShift {
+Sehr geehrter Herr $addresee_name,
+
+$first_paragraph
+
+$second_paragraph
+}
+
+# greetings
+@LP lines @Break -0.6c @VShift {
+Mit freundlichen Grüßen,
+
+$sender_name
+}
+
+@End @Text
