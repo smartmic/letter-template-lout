@@ -1,4 +1,4 @@
-# formbrief - Lout setup file for customized letters 
+# mybrief - Lout setup file for customized letters 
 #
 # It provides a standardized letter format roughly based on the layout
 # rules according German DIN 5008 
@@ -325,15 +325,15 @@
         C {gray @Colour {@Sym bracketlefttp 3p @Space{T E L E F O N}}}
         D {gray @Colour {@Sym bracketlefttp 3p @Space{B A N K V E R B I N D U N G}}}
         @Rowa
-        A {Beispielstra{@Char germandbls}e 1}
-        B {mustermann@example.com}
-        C {0123"/"456789}
+        A {Drückebergergasse 34}
+        B {augustina4816@outlook.com}
+        C {+49-70-216-33109}
         D {Online Bank}
         @Rowa
-        A {12345 Beispielstadt}
-        B {0123"/"9876543}
-        C {0199"/"9876543}
-        D {IBAN DExxxxxxxxxxxxxxxxxxxx}
+        A {36512 Schleswig}
+        B {+49-20-276-86749}
+        C {+49-00-332-98227}
+        D {Konto 4601 8327 5296 9528}
         }
   } }
   # @EvenTop		{ @Centre{- @PageNum -}	}
@@ -347,18 +347,18 @@
         C {gray @Colour {@Sym bracketlefttp 3p @Space{T E L E F O N}}}
         D {gray @Colour {@Sym bracketlefttp 3p @Space{B A N K V E R B I N D U N G}}}
         @Rowa
-        A {Beispielstra{@Char germandbls}e 1}
-        B {mustermann@example.com}
-        C {0123"/"456789}
+        A {Drückebergergasse 34}
+        B {augustina4816@outlook.com}
+        C {+49-70-216-33109}
         D {Online Bank}
         @Rowa
-        A {12345 Beispielstadt}
-        B {0123"/"9876543}
-        C {0199"/"9876543}
-        D {IBAN DExxxxxxxxxxxxxxxxxxxx}
+        A {36512 Schleswig}
+        B {+49-20-276-86749}
+        C {+49-00-332-98227}
+        D {Konto 4601 8327 5296 9528}
         }
   } }
-  @StartOddTop	{ @Right{ {Helvetica Base 12p} @Font {Max Mustermann} }			}
+  @StartOddTop	{ @Right{ {Helvetica Base 12p} @Font {Birgit Hutmacher} }			}
   @StartOddFoot	{  @Centre{
     {Helvetica Base 8p} @Font    @Tbl 
         aformat{ @Cell A | @Cell B | @Cell C | @Cell D }
@@ -369,15 +369,15 @@
         C {gray @Colour {@Sym bracketlefttp 3p @Space{T E L E F O N}}}
         D {gray @Colour {@Sym bracketlefttp 3p @Space{B A N K V E R B I N D U N G}}}
         @Rowa
-        A {Beispielstra{@Char germandbls}e 1}
-        B {mustermann@example.com}
-        C {0123"/"456789}
+        A {Drückebergergasse 34}
+        B {augustina4816@outlook.com}
+        C {+49-70-216-33109}
         D {Online Bank}
         @Rowa
-        A {12345 Beispielstadt}
-        B {0123"/"9876543}
-        C {0199"/"9876543}
-        D {IBAN DExxxxxxxxxxxxxxxxxxxx}
+        A {36512 Schleswig}
+        B {+49-20-276-86749}
+        C {+49-00-332-98227}
+        D {Konto 4601 8327 5296 9528}
         }
   } }
   # @StartEvenTop	{ @Null			}
@@ -542,4 +542,4 @@
 ###############################################################################
 
 @SysDatabase @FontDef  { fontdefs }		  # font definitions
-@SysDatabase @RefStyle { refstyle }		  # reference printing styles
+@SysDatabase @RefStyle { refstyle }		  # reference printing styles"
