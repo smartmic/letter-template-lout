@@ -1,0 +1,583 @@
+%!PS-Adobe-3.0
+%%Creator: Basser Lout Version 3.39 (September 2010)
+%%CreationDate: Mon Jan 16 22:09:37 2017
+%%DocumentData: Binary
+%%DocumentNeededResources: (atend)
+%%DocumentSuppliedResources: (atend)
+%%DocumentMedia: A4 595 842 0 white ()
+%%PageOrder: Ascend
+%%LanguageLevel: 2
+%%Pages: (atend)
+%%BoundingBox: 0 0 595 842
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset LoutStartUp
+/cp_x 0 def
+/cp_y 0 def
+/louts 0 def
+/loutv 0 def
+/loutf 0 def
+/ymark 0 def
+/xmark 0 def
+/ysize 0 def
+/xsize 0 def
+/save_cp { currentpoint /cp_y exch def /cp_x exch def } bind def
+/restore_cp { cp_x cp_y moveto } bind def
+/outline { gsave 1 1 1 setrgbcolor dup show save_cp
+  grestore true charpath stroke restore_cp } bind def
+/m  { 3 1 roll moveto show } bind def
+/mo { 3 1 roll moveto outline } bind def
+/s  { exch currentpoint exch pop moveto show } bind def
+/so { exch currentpoint exch pop moveto outline } bind def
+/k  { exch neg 0 rmoveto show } bind def
+/ko { exch neg 0 rmoveto outline } bind def
+/r  { exch 0 rmoveto show } bind def
+/ro { exch 0 rmoveto outline } bind def
+/c  { gsave 3 1 roll rmoveto show grestore } bind def
+/co { gsave 3 1 roll rmoveto outline grestore } bind def
+/ul { gsave setlinewidth dup 3 1 roll
+      moveto lineto stroke grestore } bind def
+/in { 1440 mul } bind def
+/cm { 567 mul } bind def
+/pt { 20 mul } bind def
+/em { 120 mul } bind def
+/sp { louts mul } def
+/vs { loutv mul } def
+/ft { loutf mul } def
+/dg {           } def
+
+/LoutGraphic {
+  /louts exch def
+  /loutv exch def
+  /loutf exch def
+  /ymark exch def
+  /xmark exch def
+  /ysize exch def
+  /xsize exch def
+} def
+
+/LoutGr2 { gsave translate LoutGraphic gsave } def
+
+/LoutFont
+{ findfont exch scalefont setfont
+} bind def
+
+/LoutRecode {
+  { findfont dup length dict begin
+    {1 index /FID ne {def} {pop pop} ifelse} forall
+    /Encoding exch def
+    currentdict end definefont pop
+  }
+  stopped pop
+} bind def
+
+/PreEPSF_state 0 def
+/dict_stack 0 def
+/ops_count 0 def
+/LoutStartEPSF { % prepare for EPSF inclusion
+  /PreEPSF_state save def
+  /dict_stack countdictstack def
+  /ops_count count 1 sub def
+  20 dict begin
+  /showpage {} def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [] 0 setdash newpath
+  /languagelevel where
+  { pop languagelevel
+    1 ne
+    { false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/LoutEPSFCleanUp { % clean up after EPSF inclusion
+  count ops_count sub { pop } repeat
+  countdictstack dict_stack sub { end } repeat
+  PreEPSF_state restore
+} bind def
+
+% Find current texture (may be null)
+% - LoutCurrentP p
+/LoutCurrentP
+{
+  currentcolorspace
+  0 get /Pattern eq
+  {
+    [ currentcolor ]
+    dup length 1 sub get
+  }
+  {
+    null
+  } ifelse
+} def
+
+% Find current color and color space
+% - LoutCurrentCCS c cs
+/LoutCurrentCCS
+{
+  LoutCurrentP dup null eq
+  {
+    pop [ currentcolor ]
+    currentcolorspace
+  }
+  {
+    dup
+    /UnderlyingColor get
+    exch /UnderlyingColorSpace get
+  } ifelse
+} def
+
+% Install c, cs, and (a copy of) p into graphics state
+% c cs p LoutSetCCSP -
+/LoutSetCCSP
+{
+  dup null eq
+  {
+    pop setcolorspace
+    aload pop setcolor
+  }
+  {
+    % copy pattern dictionary
+    12 dict copy
+
+    % record cs and c in p
+    dup /UnderlyingColorSpace 3 index
+    put
+    dup /UnderlyingColor 4 index
+    put
+
+    % do setcolorspace and setcolor
+    dup /PaintType get 1 eq
+    {
+      [ /Pattern ] setcolorspace
+      setcolor
+      pop pop
+    }
+    {
+      [ /Pattern
+      4 -1 roll
+      ] setcolorspace
+      exch aload length 1 add
+      -1 roll
+      setcolor
+    } ifelse
+  } ifelse
+} bind def
+
+% num LoutSetGray -
+/LoutSetGray
+{
+  [ 2 1 roll ]
+  [ /DeviceGray ]
+  LoutCurrentP
+  LoutSetCCSP
+} bind def
+
+% r g b LoutSetRGBColor -
+/LoutSetRGBColor
+{
+  [ 4 1 roll ]
+  [ /DeviceRGB ]
+  LoutCurrentP
+  LoutSetCCSP
+} bind def
+
+% h s b LoutSetHSBColor -
+/LoutSetHSBColor
+{
+  gsave sethsbcolor
+  currentrgbcolor grestore
+  LoutSetRGBColor
+} bind def
+
+% c m y k LoutSetRGBColor -
+/LoutSetCMYKColor
+{
+  [ 5 1 roll ]
+  [ /DeviceCMYK ]
+  LoutCurrentP
+  LoutSetCCSP
+} bind def
+
+% p LoutSetTexture -
+/LoutSetTexture
+{
+  LoutCurrentCCS
+  3 -1 roll
+  LoutSetCCSP
+} bind def
+
+% <scale > <scalex> <scaley> <rotate> <hshift> <vshift>
+% <painttype> <bbox> <xstep> <ystep> <paintproc> LoutMakeTexture p
+/LoutMakeTexture
+{
+  12 dict begin
+  /PaintProc exch def
+  /YStep exch def
+  /XStep exch def
+  /BBox exch def
+  /PaintType exch def
+  /PatternType 1 def
+  /TilingType 1 def
+  currentdict end
+  7 1 roll
+  matrix translate
+  5 1 roll
+  matrix rotate
+  4 1 roll
+  matrix scale
+  exch dup matrix scale
+  matrix concatmatrix
+  matrix concatmatrix
+  matrix concatmatrix
+  /makepattern where
+  {
+    pop makepattern
+  }
+  {
+    pop pop null
+  } ifelse
+} bind def
+
+/LoutTextureSolid
+{
+  null
+  LoutSetTexture
+} bind def
+%%EndResource
+
+%%BeginResource: procset LoutBasicSetup
+% @PrependGraphic file /usr/share/lout/include/bsf.lpg
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%  PostScript @SysPrependGraphic file for @BasicSetup                %
+%                                                                    %
+%  This file has been placed in the public domain by its author,     %
+%  Jeffrey H. Kingston                                               %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% width height linethickness louteuro -
+% draw a Euro symbol of this width and height with this line thickness
+/louteuro {
+  20 dict begin
+    /eurothick exch def
+    /euroheight exch def
+    /eurowidth exch def
+    /eurostrokewidth euroheight 0.8 mul def
+    /eurostep eurothick 60 cos mul 60 sin div def
+    /eurotheta 40 def
+
+    % llx lly width thickness louteurobox -
+    % draw angled box starting at (llx, lly) with given width and thickness
+    /louteurobox
+    {
+      /euroboxthick exch def
+      /euroboxwidth exch def
+      newpath moveto euroboxwidth 0 rlineto
+      eurostep euroboxthick rlineto
+      euroboxwidth neg 0 rlineto closepath fill
+    } def
+
+    % lower cross stroke
+    0 euroheight 2 div eurothick 1.5 mul sub
+    eurostrokewidth eurothick louteurobox
+
+    % upper cross stroke
+    0 euroheight 2 div eurothick 0.5 mul add
+    eurostrokewidth eurostep 2 mul add eurothick louteurobox
+
+    % circular part
+    /eurohctr eurowidth euroheight 2 div eurotheta cos mul sub def
+    /eurovctr euroheight 2 div def
+    newpath
+    eurohctr eurovctr eurovctr eurotheta 350 eurotheta sub arc
+    eurohctr eurovctr eurovctr eurothick sub 365 eurotheta sub eurotheta arcn
+    closepath fill
+  end
+} def
+
+% path for @FullWidthRule symbol
+/LoutRule
+{ 0 0 moveto xsize 0 lineto
+} def
+
+% path for @Box symbol
+/LoutBox
+{ 0 0 moveto xsize 0 lineto
+  xsize ysize lineto 0 ysize lineto
+  closepath
+} def
+
+% path for @CurveBox symbol
+/LoutCurveBox
+{ xmark 0 moveto
+  xsize xmark sub xmark xmark 270 360 arc
+  xsize xmark sub ysize xmark sub xmark 0 90 arc
+  xmark ysize xmark sub xmark 90 180 arc
+  xmark xmark xmark 180 270 arc
+  closepath
+} def
+
+% path for @ShadowBox symbol
+/LoutShadowBox
+{ xmark 2 mul 0 moveto xsize 0 lineto
+  xsize ysize xmark 2 mul sub lineto
+  xsize xmark sub ysize xmark 2 mul sub lineto
+  xsize xmark sub xmark lineto
+  xmark 2 mul xmark lineto
+  closepath
+} def
+
+% set up dictionary containing margin note data: parity LoutMargSet -
+/LoutMargSet
+{ /LoutMargDict 12 dict def
+  LoutMargDict begin
+    /parity exch def
+    /matr matrix currentmatrix def
+    /rightx xsize def
+    /lefty ysize def   % highest allowable point for top of next left note
+    /righty ysize def  % highest allowable point for top of next right note
+    /max { 2 copy gt { pop } { exch pop } ifelse } def
+    /min { 2 copy lt { pop } { exch pop } ifelse } def
+  end
+} def
+
+%translate coordinate system for marginal notes:  type LoutMargShift -
+% where type 0 is left margin, 1 is right margin, 2 is outer, 3 is inner
+/LoutMargShift
+{ LoutMargDict begin
+
+    % y coordinate of top of note, in margin coords, before vertical adjust
+    0 ysize transform matr itransform exch pop
+
+    % decide whether left or right margin based on type and parity
+    exch [ 0 1 parity 1 parity sub ] exch get 0 eq
+    {
+      % left margin: adjust top of note downwards if overlaps previous note
+      lefty min
+
+      % bottom of note is new lefty position and also translate position
+      ysize sub dup /lefty exch def
+
+      % want right edge of note at coordinate zero
+      xsize neg exch
+    }
+    {
+      % right margin: adjust top of note downwards if overlaps previous note
+      righty min
+
+      % bottom of note is new righty position and also translate position
+      ysize sub dup /righty exch def
+
+      % want left edge of note at coordinate rightx
+      rightx exch
+    } ifelse
+
+    % stack now contains coord of bottom left corner in margin coordinates
+    matr setmatrix translate
+  end
+} def
+
+% create LoutPageDict with left, right, foot, top for @Place symbol users
+/LoutPageSet
+{
+  /LoutPageDict 5 dict def
+  LoutPageDict begin
+    /matr matrix currentmatrix def
+    /left 0 def
+    /right xsize def
+    /foot 0 def
+    /top ysize def
+  end
+
+} def
+
+%%EndResource
+
+%%EndProlog
+
+%%BeginSetup
+%%BeginResource: encoding vec2
+/vec2 [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright
+/parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+/zero /one /two /three /four /five /six /seven
+/eight /nine /colon /semicolon /less /equal /greater /question
+/at /A /B /C /D /E /F /G
+/H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+/quoteleft /a /b /c /d /e /f /g
+/h /i /j /k /l /m /n /o
+/p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef
+/quotesinglbase /quotedblbase /ellipsis /OE /oe /quotedblleft /quotedblright /fi
+/fl /endash /emdash /bullet /dagger /daggerdbl /florin /fraction
+/dotlessi /grave /acute /circumflex /tilde /macron /breve /dotaccent
+/dieresis /.notdef /ring /cedilla /.notdef /hungarumlaut /ogonek /caron
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis
+] def
+%%EndResource
+
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+%%EndSetup
+
+%%Page: 1 1
+%%BeginPageSetup
+%%PageResources: font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Symbol
+/pgsave save def
+%%IncludeResource: font Helvetica
+/Helveticafnt1 vec2 /Helvetica LoutRecode
+/fnt1 { /Helveticafnt1 LoutFont } def
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Boldfnt3 vec2 /Helvetica-Bold LoutRecode
+/fnt3 { /Helvetica-Boldfnt3 LoutFont } def
+%%IncludeResource: font Symbol
+/fnt2 { /Symbol LoutFont } def
+0.0500 dup scale 10 setlinewidth
+%%EndPageSetup
+
+gsave
+0 0 translate
+220 fnt1 0.0 0.0 0.0 LoutSetRGBColor LoutTextureSolid 11900 16840 0 16840 220 264 61 LoutGraphic
+gsave
+LoutPageSet
+grestore
+gsave
+0 0 translate
+1.0 1.0 1.0 LoutSetRGBColor 11900 16840 0 16840 220 264 61 LoutGraphic
+gsave
+LoutBox gsave 1.0 1.0 1.0 LoutSetRGBColor  fill grestore 0 cm setlinewidth stroke
+grestore
+gsave
+0 16840 translate
+0.0000 rotate
+gsave
+1417 -1134 translate
+0.0 0.0 0.0 LoutSetRGBColor
+9066 0 0 0 220 264 61 LoutGraphic
+gsave
+1 LoutMargSet
+grestore
+
+grestore
+240 fnt1 0.0 0.0 0.0 LoutSetRGBColor 8709 -1305(Birgit)m 9314(Hutmacher)s gsave
+1417 -15052 translate
+220 fnt1
+9066 13269 0 13269 220 264 61 LoutGraphic
+gsave
+1 LoutMargSet
+grestore
+160 fnt1 0.5 0.5 0.5 LoutSetRGBColor 0 11885(Birgit)m 402(Hutmacher)s 1223(\213)s
+1321(Dr)s -2(\374c)k 3(k)k 3(ebergergasse)k 2741(34)s
+2956(\213)s 3054(36512)s 3531(Schles)s 4(wig)k 0 4233 11869 8 ul
+220 fnt1
+0.0 0.0 0.0 LoutSetRGBColor 0 11341(Deutsche)m 980(V)s 17(er)k -5(m\366gensber)k 2(atung)k
+0 11077(Hr)m 11(.)k 323(Adr)s -3(ian)k 1006(Hoe\210er)s
+0 10813(Mehr)m -3(ingdamm)k 1452(566)s 0 10549(79396)m 663(Bretten)s
+6429 9802(Schles)m 6(wig,)k 7512(16.)s 7859(J)s 4(an)k 2(uar)k
+8585(2017)s 220 fnt3 0 9483(Das)m 455(Billig)s -2(e)k
+1170(ist)s 1482(immer)s 2198(das)s 2629(T)s 13(euer)k 3(ste)k -4(.)k
+0 9219(K)m 6(undenn)k 2(ummer)k 1731(23180)s 220 fnt1
+0 8481(Sehr)m 524(geehr)s -8(ter)k 1410(Herr)s 1897(Adr)s -3(ian)k
+2580(Hoe\210er)s 11(,)k 0 7953(W)m 6(er)k 457(w\374rde)s
+1107(ihm)s 1507(schon)s 2140(f)s 6(olgen,)k 2834(sp\344t)s
+3306(in)s 3523(der)s 3901(Nacht)s 4531(und)s 4946(dazu)s
+5469(noch)s 5992(in)s 6209(dieser)s 6867(engen)s 7524(Gasse)s
+8212(mitten)s 0 7689(im)m 278(\374bel)s 739(beleum)s 2(undeten)k
+2296(Haf)s 6(en)k 4(vier)k -8(tel?)k 3632(Ger)s 2(ade)k
+4415(jetzt,)s 4920(w)s 2(o)k 5252(er)s 5508(das)s
+5916(Ding)s 6415(seines)s 7103(Lebens)s 7877(gedreht)s 0 7425(hatte)m
+541(und)s 956(mit)s 1305(der)s 1683(Beute)s 2309(v)s 5(erschwinden)k
+3692(w)s 2(ollte!)k 4351(Beinahe)s 5208(w)s 3(\344re)k
+5733(er)s 5989(dabei)s 6572(\374ber)s 7072(den)s 7485(umgest\374rzten)s
+0 7161(M\374lleimer)m 1010(gef)s 6(allen,)k 1874(der)s 2252(mitten)s
+2896(im)s 3174(W)s 6(eg)k 3668(lag.)s 0 6633(K)m 8(\366nnte)k
+740(dieses)s 1428(der)s 1806(\210ehentlich)s 2840(herbeigesehnte)s 4405(A)s 6(us)k 6(w)k 2(eg)k
+5220(aus)s 5628(seinem)s 6382(Dilemma)s 7302(sein?)s 7873(W)s 6(enn)k
+8487(das)s 0 6369(liebe)m 515(T)s 26(al)k 840(um)s
+1192(mich)s 1702(dampft,)s 2476(und)s 2891(die)s 3236(hohe)s
+3777(Sonne)s 4464(an)s 4755(der)s 5133(Ober\210\344che)s 6260(der)s
+6638(undurchdr)s -3(inglichen)k 0 6105(Finster)m -5(nis)k 1002(meines)s
+1755(W)s 8(aldes)k 2525(r)s -3(uht,)k 3001(und)s
+3408(n)s 2(ur)k 3777(einz)s 3(elne)k 4635(Oder)s
+5176(geh\366r)s -8(ten)k 6090(die)s 6427(Schr)s -3(itte)k
+7218(hinter)s 7820(ihm)s 8212(zu)s 8483(einem)s 0 5841(der)m
+378(unz\344hligen)s 1485(Gesetz)s 3(esh\374ter)k 2971(dieser)s 3629(Stadt,)s
+4244(und)s 4659(die)s 5004(st\344hler)s -5(ne)k 5964(Acht)s
+6460(um)s 6812(seine)s 7389(Handgelenk)s 4(e)k 0 5577(w\374rde)m
+650(gleich)s 1269(zuschnappen?)s 2744(Er)s 3024(k)s 4(onnte)k
+3732(die)s 4077(A)s 6(uff)k 6(order)k -3(ung)k
+5385(stehen)s 6091(zu)s 6370(b)s 4(leiben)k 7119(schon)s
+7752(h\366ren.)s 8416(W)s 6(er)k 0 5313(w\374rde)m 650(ihm)s
+1049(schon)s 1682(f)s 6(olgen,)k 2375(sp\344t)s 2846(in)s
+3063(der)s 3440(Nacht)s 4069(und)s 4484(dazu)s 5006(noch)s
+5528(in)s 5745(dieser)s 6402(engen)s 7058(Gasse)s 7746(mitten)s
+8389(im)s 8666(\374bel)s 0 5049(beleum)m 2(undeten)k 1557(Haf)s 6(en)k 4(vier)k -8(tel?)k
+2893(Langsam)s 3843(be)s 4(w)k 2(egte)k 4719(er)s
+4975(sich)s 5412(auf)s 5775(die)s 6120(off)s 6(ene)k
+6777(T)s 26(\374r)k 7141(zu,)s 7476(immer)s 8146(dicht)s
+8666(an)s 0 4785(die)m 345(Mauer)s 1028(gepresst.)s 0 4249(Mit)m
+349(freundlichen)s 1590(Gr)s -3(\374\337en,)k 0 3721(Birgit)m 555(Hutmacher)s
+
+grestore
+gsave
+1417 -15052 translate
+220 fnt1 0 0 0 0 220 264 61 LoutGraphic
+gsave
+1 LoutMargSet
+grestore
+
+grestore
+160 fnt2 0.5 0.5 0.5 LoutSetRGBColor 2060 -15673(\351)m 160 fnt1
+2159 -15674(A)m 2323(D)s 2491(R)s 2660(E)s 2818(S)s
+2977(S)s 3136(E)s 160 fnt2 3843 -15673(\351)m 160 fnt1
+3942 -15674(E)m 4100(M)s 4282(A)s 4446(I)s 4536(L)s
+4681(&)s 4844(F)s 4997(A)s 5161(X)s 160 fnt2
+6082 -15673(\351)m 160 fnt1 6181 -15674(T)m 6336(E)s 6494(L)s
+6639(E)s 6797(F)s 6950(O)s 7128(N)s 160 fnt2
+7577 -15673(\351)m 160 fnt1 7676 -15674(B)m 7836(A)s 8000(N)s
+8163(K)s 8329(V)s 8492(E)s 8650(R)s 8819(B)s
+8979(I)s 9069(N)s 9232(D)s 9400(U)s 9563(N)s
+9726(G)s 0.0 0.0 0.0 LoutSetRGBColor 2060 -15930(Dr)m -2(\374c)k 3(k)k 3(ebergergasse)k
+3480(34)s 3843(augustina4816@outlook.com)s 6082(+49-70-216-33109)s 7577(Online)s 8073(Bank)s
+2060 -16186(36512)m 2537(Schles)s 4(wig)k 3843(+49-20-276-86749)s 6082(+49-00-332-98227)s
+7577(K)s 6(onto)k 8024(4601)s 8389(8327)s 8780(5296)s
+9170(9528)s 
+grestore
+
+grestore
+
+grestore
+
+pgsave restore
+showpage
+
+%%Trailer
+%%DocumentNeededResources: font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Symbol
+%%DocumentSuppliedResources: procset LoutStartUp
+%%+  procset LoutBasicSetup
+%%+ encoding vec2
+%%Pages: 1
+%%EOF
