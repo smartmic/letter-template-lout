@@ -15,19 +15,6 @@ for ordinary documents supplied with the Lout installation.
 You will have to change ``mybrief`` only once when you fill in your
 contact data.  
 
-Grab a (new) template
----------------------
-
-The dummy letters were generated with the help of Elizabeth_ for
-sourcing some random content. If you have Elizabeth and Python3
-installed, you can generate a new dummy letter as a template for your
-own by typing:: 
-
-    cd gen-dummy/
-    ./gen-dummy/randomletter.py
-
-Of course this step is not required. Just adopt the available
-templates ``mybrief`` and ``brief.lout``.
 
 Letters with Lout
 -----------------
@@ -51,6 +38,20 @@ Feel free to deploy it as starting point for your own letters.
 
 If you want to use other than the Lout standart fonts, please have a
 look on addfonts_.
+
+Grab a (new) template
+---------------------
+
+The dummy letters were generated with the help of Elizabeth_ for
+sourcing some random content. If you have Elizabeth and Python3
+installed, you can generate a new dummy letter as a template for your
+own by typing:: 
+
+    cd gen-dummy/
+    ./randomletter.py
+
+Of course this step is not required and can easly be ignored. Just
+adopt the available templates ``mybrief`` and ``brief.lout``.
 
 .. _Lout: https://en.wikipedia.org/wiki/Lout_%28software%29
 .. _Elizabeth: http://elizabeth.readthedocs.io/en/latest/
