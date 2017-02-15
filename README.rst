@@ -15,14 +15,19 @@ for ordinary documents supplied with the Lout installation.
 You will have to change ``mybrief`` only once when you fill in your
 contact data.  
 
+Grab a (new) template
+---------------------
+
 The dummy letters were generated with the help of Elizabeth_ for
 sourcing some random content. If you have Elizabeth and Python3
 installed, you can generate a new dummy letter as a template for your
 own by typing:: 
 
+    cd gen-dummy/
     ./gen-dummy/randomletter.py
 
-Of course this step is not required.
+Of course this step is not required. Just adopt the available
+templates ``mybrief`` and ``brief.lout``.
 
 Letters with Lout
 -----------------
