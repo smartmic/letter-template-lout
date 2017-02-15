@@ -19,9 +19,9 @@ b = Business('de')
 #d = Datetime('de') 
 t = Text('de')
 
-with open ("letter-bare-template", "r") as letterfile:
+with open ("brief-template.lout", "r") as letterfile:
     dummyletter=Template(letterfile.read())
-with open ("layout-bare-template", "r") as layoutfile:
+with open ("mybrief-template", "r") as layoutfile:
     mylayout=Template(layoutfile.read())
 
 sender_name = p.full_name(gender='female')
