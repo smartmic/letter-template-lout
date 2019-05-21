@@ -42,7 +42,7 @@ look on addfonts_.
 Grab a (new) template
 ---------------------
 
-The dummy letters were generated with the help of Elizabeth_ for
+The dummy letters were generated with the help of Elizabeth for
 sourcing some random content. If you have Elizabeth and Python3
 installed, you can generate a new dummy letter as a template for your
 own by typing:: 
@@ -53,7 +53,9 @@ own by typing::
 Of course this step is not required and can easly be ignored. Just
 adopt the available templates ``mybrief`` and ``brief.lout``.
 
+**Update**: Elizabeth has been replaced by Mimesis_
+
 .. _Lout: https://en.wikipedia.org/wiki/Lout_%28software%29
-.. _Elizabeth: http://elizabeth.readthedocs.io/en/latest/
+.. _Mimesis: https://mimesis.name/
 .. _addfonts: https://github.com/smartmic/addfonts
 
